@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Generate JSON Object</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="text/javascript" src="js/knockout-3.5.1.js"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script> -->
+
+</head>
+
+<body class="grid-container">
+
+  <div class="header"></div>
+
+  <button class="generate-button" data-bind="click: generateJson"> Generate JSON Object </button>
+
+  <div class="member" data-bind="foreach: members">
+    <div class="name"> <input type="text" data-bind="value: name"> </div>
+    <div class="value" data-bind="template: { name: valueTemplate, afterRender: valueTemplateAfterRender }"></div>
+    <select class="value-type" data-bind="options: $root.valueTypes, value: valueType"></select>
+    <button class="remove-member" data-bind="click: $root.removeMember">-</button>
+  </div>
+
+  <button class="add-button" data-bind="click: addMember"> Add Name/Value Pair </button>
+
+  <div class="footer"></div>
+
+</body>
+
+<script id="string" type="text/html">
+  <input type="text" data-bind="value: value">
+</script>
+
+<script id="number" type="text/html">
+  <input type="number" data-bind="value: value">
+</script>
+
+<script id="boolean" type="text/html">
+  <input type="checkbox" data-bind="checked: value">
+</script>
+
+<script id="null" type="text/html">
+  <input type="text" data-bind="value: value" disabled>
+</script>
+
+<script type="text/javascript" src="js/index.js"></script>
+
+</html>
+
