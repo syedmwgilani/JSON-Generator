@@ -90,7 +90,9 @@ let vm = new function () {
     copyTextClipboard(json);
   }
 
-
+  self.changeColor = function() {
+    console.log('hello')
+  }
 }  //  vm
 
 
