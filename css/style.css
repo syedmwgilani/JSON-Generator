@@ -31,18 +31,18 @@
   gap: 1em;
 }
 
-.name {
-  grid-column: 1;
-}
-.value {
-  grid-column: 2;
-}
-.value-type {
-  grid-column: 3;
-}
-.remove-member {
-  grid-column: 4;
-}
+  .name {
+    grid-column: 1;
+  }
+  .value {
+    grid-column: 2;
+  }
+  .value-type {
+    grid-column: 3;
+  }
+  .remove-member {
+    grid-column: 4;
+  }
 
 .add-button {
   grid-column: 4 / 8;
@@ -50,7 +50,7 @@
 }
 
 .json-box {
-  grid-column: 4/8;
+  grid-column: 4 / 8;
   grid-row: 5;
 }
 
