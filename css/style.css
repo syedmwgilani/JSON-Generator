@@ -49,6 +49,11 @@
   grid-row: 4;
 }
 
-.footer {
+.json-box {
+  grid-column: 4/8;
   grid-row: 5;
+}
+
+.footer {
+  grid-row: 6;
 }

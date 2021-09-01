@@ -1,7 +1,7 @@
 
 
 //https://www.json.org/json-en.html
-//Values Types: object, array, string, number, "true", "false", "null"
+//Values Types: string, number, "true", "false", "null"
 function Element(value, valueType = 'string') {
   let self = this;
   self.value = value;
@@ -63,6 +63,7 @@ let vm = new function () {
 
   self.valueTypes = ['string', 'number', 'boolean', 'null'];
 
+  self.jsonBox = ko.observable('');
   self.members = ko.observableArray([
     new Member()
   ]);
@@ -85,9 +86,11 @@ let vm = new function () {
 
     //TODO setting to (omit or keep) -> null, NaN, empty string
     let json = JSON.stringify(obj);
-
+    self.jsonBox(json);
     copyTextClipboard(json);
   }
+
+
 }  //  vm
 
 
