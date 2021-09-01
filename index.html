@@ -13,8 +13,25 @@
 </head>
 
 <body class="grid-container">
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-minus" viewBox="0 0 32 32">
+        <path d="M0 13v6c0 0.552 0.448 1 1 1h30c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1h-30c-0.552 0-1 0.448-1 1z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-brightness-contrast" viewBox="0 0 32 32">
+        <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM16 21v-10c2.757 0 5 2.243 5 5s-2.243 5-5 5zM16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"></path>
+      </symbol>
+   </defs>
+  </svg>
+
 
   <div class="header"></div>
+  <svg class="icon-brightness-contrast" data-bind="click: changeColor"><use xlink:href="#icon-brightness-contrast"></use></svg>
 
   <button class="generate-button" data-bind="click: generateJson"> Generate JSON Object </button>
 
@@ -22,7 +39,9 @@
     <div class="name"> <input type="text" data-bind="value: name"> </div>
     <div class="value" data-bind="template: { name: valueTemplate, afterRender: valueTemplateAfterRender }"></div>
     <select class="value-type" data-bind="options: $root.valueTypes, value: valueType"></select>
-    <button class="remove-member" data-bind="click: $root.removeMember">-</button>
+    <button class="remove-member" data-bind="click: $root.removeMember">
+      <svg class="icon-minus"><use xlink:href="#icon-minus"></use></svg>
+    </button>
   </div>
 
   <button class="add-button" data-bind="click: addMember"> Add Name/Value Pair </button>
