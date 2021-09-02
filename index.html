@@ -39,7 +39,7 @@
   <div class="copyTextMessage" data-bind="visible: copyTextMessage">JSON Copied To Clipboard.</div>
 
   <div class="member" data-bind="foreach: members">
-    <div class="name"> <input type="text" data-bind="value: name"> </div>
+    <div class="name"> <input type="text" data-bind="value: name" placeholder="Name"> : </div>
     <div class="value" data-bind="template: { name: valueTemplate, afterRender: valueTemplateAfterRender }"></div>
     <select class="value-type" data-bind="options: $root.valueTypes, value: valueType"></select>
     <button class="remove-member" data-bind="click: $root.removeMember">
@@ -58,11 +58,11 @@
 </body>
 
 <script id="string" type="text/html">
-  <input type="text" data-bind="value: value">
+  <input type="text" data-bind="value: value" placeholder="String Value">
 </script>
 
 <script id="number" type="text/html">
-  <input type="number" data-bind="value: value">
+  <input type="number" data-bind="value: value" placeholder="Number Value">
 </script>
 
 <script id="boolean" type="text/html">
@@ -70,7 +70,7 @@
 </script>
 
 <script id="null" type="text/html">
-  <input type="text" data-bind="value: value" disabled>
+  <input type="text" data-bind="value: value" placeholder="NULL" disabled>
 </script>
 
 <script type="text/javascript" src="js/index.js"></script>
