@@ -35,6 +35,8 @@
 
   <button class="generate-button" data-bind="click: generateJson"> Generate JSON Object </button>
 
+  <div class="copyTextMessage" data-bind="visible: copyTextMessage">JSON Copied To Clipboard.</div>
+
   <div class="member" data-bind="foreach: members">
     <div class="name"> <input type="text" data-bind="value: name"> </div>
     <div class="value" data-bind="template: { name: valueTemplate, afterRender: valueTemplateAfterRender }"></div>

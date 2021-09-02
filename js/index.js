@@ -90,6 +90,8 @@ let vm = new function () {
     copyTextClipboard(json);
   }
 
+  self.copyTextMessage = ko.observable(false);
+
   self.changeColor = function() {
     console.log('hello')
   }
@@ -103,6 +105,8 @@ async function copyTextClipboard(text) {
   try {
     await navigator.clipboard.writeText(text);
     console.log('Text copied to clipboard: ', text);
+    vm.copyTextMessage(true)
+    setTimeout( function(){ vm.copyTextMessage(false) }, 1000)
   } catch (err) {
     console.error('Failed to copy: ', err);
   }

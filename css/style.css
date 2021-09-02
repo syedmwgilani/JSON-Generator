@@ -53,6 +53,12 @@ input, select {
   grid-row: 2;
 }
 
+.copyTextMessage {
+  grid-column: 8 / 11;
+  grid-row: 2;
+  margin: auto;
+}
+
 .icon-brightness-contrast {
   grid-column: 10;
   grid-row: 2;
